@@ -98,6 +98,7 @@
         wrapper = document.createElement('div');
         wrapper.id = options.wrapperId;
 
+        // color: #eeeeee;
         wrapper.style.cssText = `
             position: fixed;
             right: ${options.position.right};
@@ -106,7 +107,7 @@
             height: ${options.height};
             z-index: 2147483647;
             background: rgba(0, 0, 0, 0.92);
-            color: #eeeeee;
+            color: #00ff66;
             font-family: Arial, sans-serif;
             font-size: 13px;
             line-height: 1.4;
@@ -122,10 +123,11 @@
         stopPageClickHandlers(wrapper);
 
         const header = document.createElement('div');
+        //             color: #ffffff;
         header.style.cssText = `
             flex: 0 0 auto;
             padding: 8px;
-            color: #ffffff;
+            color: #00ff66;
             border-bottom: 1px solid #333;
             background: rgba(0, 0, 0, 0.98);
             font-weight: bold;
@@ -215,7 +217,9 @@
         if (normalized >= LEVELS.ERROR) return '#ff5555';
         if (normalized >= LEVELS.WARN) return '#ffaa00';
         if (normalized >= LEVELS.INFO) return '#00ff66';
-        return '#cccccc';
+        // return '#cccccc';
+        return '#00ff66';
+
     }
 
     function writeToBrowserConsole(level, args) {
