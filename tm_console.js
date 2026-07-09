@@ -12,7 +12,8 @@
         position: {
             right: '10px',
             bottom: '10px'
-        }
+        },
+        minLevel: 0,
     };
 
     const LEVELS = {
@@ -235,6 +236,11 @@
     }
 
     function log(level, ...args) {
+        const normalized = normalizeLevel(level);
+    
+        if (normalized < options.minLevel) {
+            return;
+        }
         ensure();
 
         const lines = getLinesDiv();
