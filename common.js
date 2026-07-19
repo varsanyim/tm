@@ -1,4 +1,5 @@
 // common.js
+
 (function (global) {
     "use strict";
 
