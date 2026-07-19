@@ -1,5 +1,3 @@
-// common.js
-
 (function (global) {
     'use strict';
     function cleanText(element) {
