@@ -1,27 +1,29 @@
 // common.js
 
 (function (global) {
-    "use strict";
-
-    global.cleanText = function (element) {
-        if (!element) return "";
+    'use strict';
+    function cleanText(element) {
+        if (!element) return '';
 
         return element.textContent
-            .replace(/\s+/g, " ")
+            .replace(/\s+/g, ' ')
             .trim();
-    };
+    }
 
-    global.findFirst = function (selectors, root = document) {
-        for (const selector of selectors) {
-            const element = root.querySelector(selector);
+    function isTypingTarget(element) {
+        if (!element) return false;
 
-            if (element) {
-                return element;
-            }
-        }
+        const tagName = element.tagName?.toLowerCase();
 
-        return null;
-    };
+        return (
+            tagName === 'input' ||
+            tagName === 'textarea' ||
+            tagName === 'select' ||
+            element.isContentEditable
+        );
+    }
 
-    console.log("common.js loaded");
+  
 })(globalThis);
+
+
