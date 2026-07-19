@@ -1,6 +1,3 @@
-// common.js
-(function () {
-    'use strict';
     function cleanText(element) {
         if (!element) return '';
 
@@ -21,6 +18,3 @@
             element.isContentEditable
         );
     }
-
-  
-})();
