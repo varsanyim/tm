@@ -1,6 +1,6 @@
 (function (global) {
     'use strict';
-    function cleanText(element) {
+    global.cleanText = function (element) {
         if (!element) return '';
 
         return element.textContent
@@ -8,7 +8,7 @@
             .trim();
     }
 
-    function isTypingTarget(element) {
+    global.isTypingTarget = function (element) {
         if (!element) return false;
 
         const tagName = element.tagName?.toLowerCase();
