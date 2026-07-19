@@ -1,20 +1,26 @@
-    function cleanText(element) {
-        if (!element) return '';
+// common.js
+(function (global) {
+    "use strict";
+
+    global.cleanText = function (element) {
+        if (!element) return "";
 
         return element.textContent
-            .replace(/\s+/g, ' ')
+            .replace(/\s+/g, " ")
             .trim();
-    }
+    };
 
-    function isTypingTarget(element) {
-        if (!element) return false;
+    global.findFirst = function (selectors, root = document) {
+        for (const selector of selectors) {
+            const element = root.querySelector(selector);
 
-        const tagName = element.tagName?.toLowerCase();
+            if (element) {
+                return element;
+            }
+        }
 
-        return (
-            tagName === 'input' ||
-            tagName === 'textarea' ||
-            tagName === 'select' ||
-            element.isContentEditable
-        );
-    }
+        return null;
+    };
+
+    console.log("common.js loaded");
+})(globalThis);
